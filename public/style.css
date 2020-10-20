@@ -1,0 +1,57 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	height: 100%;
+	display: flex;
+}
+
+#map {
+	width: 75%;
+}
+
+#controller {
+	flex-grow: 1;
+	background: rgba(56, 38, 51, 0.5);
+	text-align: center;
+}
+
+h1, span {
+	font-family: 'Raleway', sans-serif;
+	color: white;
+}
+
+#controller h1 {
+	margin: 2em auto;
+	width: 8em;
+}
+
+#controller span {
+	font-size: 20px;
+}
+
+.icon {
+	vertical-align: middle;
+	width: 35px;
+	height: 35px;
+	margin: 0;
+}
+
+.choice {
+	display: block;
+	background: none;
+	width: 12em;
+	margin: 10px auto;
+	border-radius: 20px;
+	padding: 2px 8px 2px 0;
+
+	text-decoration: none;
+}
+
+.active-choice {
+	background: rgba(255, 208, 123, 0.8);
+}

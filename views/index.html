@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Food Map</title>
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5o7CqHoXt0ako_zw5_ubQ2qh5-BFAQKA&callback=initMap&libraries=places&v=beta&map_ids=fecd56c00e9bc01e" defer></script>
+
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" text="text/css" href="/style.css" />
+
+</head>
+
+<body>
+	<div class="container">
+
+		<div id="map"></div>
+
+		<div id="controller">
+			<h1>B.o.B Food Map</h1>
+
+			<a class="choice" href="#">
+				<img src="/images/kebab.png" class="icon">
+				<span>Churrascaria</span>
+			</a>
+
+			<a class="choice" href="#">
+				<img src="/images/bacon.png" class="icon">
+				<span>Kbbq</span>
+			</a>
+
+			<a class="choice" href="#">
+				<img src="images/boba.png" class="icon">
+				<span>Boba</span>
+			</a>
+
+			<a class="choice" href="#">
+				<img src="/images/buffet.png" class="icon">
+				<span>Buffet</span>
+			</a>
+		</div>
+
+	</div>
+
+	<script src="/index.js"></script>
+</body>
+
+</html>
