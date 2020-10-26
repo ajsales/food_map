@@ -4,11 +4,13 @@ let infoWindow;
 
 
 function initMap() {
+	
 	map = new google.maps.Map(document.getElementById("map"), {
 		center: { lat: 38, lng: -121 },
 		zoom: 10,
 		mapId: "fecd56c00e9bc01e",
 	});
+	
 
 	// Try HTML5 geolocation.
 	// geolocation();
@@ -119,8 +121,7 @@ for (let i = 0; i < choiceList.length; i++) {
 	const choiceEl = choiceList[i];
 	choiceEl.addEventListener("click", () => {
 		choiceEl.classList.toggle("active-choice");
-		let classList = Array.from(choiceEl.classList);
-		if (classList.includes("active-choice")) {
+		if (choiceEl.classList.contains("active-choice")) {
 			const markers = addMarkerFromQuery(places[i].query, places[i].icon);
 			curr_markers[i] = markers;
 		} else {
@@ -132,28 +133,28 @@ for (let i = 0; i < choiceList.length; i++) {
 	})
 }
 
-const navbar_map = document.getElementById("navbar-map");
-const navbar_credits = document.getElementById("navbar-credits");
-const content_1 = document.getElementById("content-1");
-const content_2 = document.getElementById("content-2");
-let classList;
-
-navbar_map.addEventListener("click", () => {
-	classList = Array.from(content_1.classList);
-	if (classList.includes("hidden")) {
-		document.querySelector("#navbar-map .navbar-icon").classList.toggle("active-choice");
-		document.querySelector("#navbar-credits .navbar-icon").classList.toggle("active-choice");
-		content_1.classList.toggle("hidden");
-		content_2.classList.toggle("hidden");
-	}
-})
-
-navbar_credits.addEventListener("click", () => {
-	classList = Array.from(content_2.classList);
-	if (classList.includes("hidden")) {
-		document.querySelector("#navbar-map .navbar-icon").classList.toggle("active-choice");
-		document.querySelector("#navbar-credits .navbar-icon").classList.toggle("active-choice");
-		content_1.classList.toggle("hidden");
-		content_2.classList.toggle("hidden");
-	}
+const navbar_containers = document.querySelectorAll(".navbar-container");
+const contents = document.querySelectorAll(".content");
+navbar_containers.forEach(navbar_container => {
+	navbar_container.addEventListener("click", e => {
+		if (!navbar_container.classList.contains("navbar-active")) {
+			if (e.target.firstElementChild) {
+				e.target.firstElementChild.classList.remove("navbar-hover");
+			} else {
+				e.target.classList.remove("navbar-hover");
+			}
+			navbar_containers.forEach(x => x.classList.toggle("navbar-active"));
+			contents.forEach(x => x.classList.toggle("hidden"));
+		}
+	})
+	navbar_container.addEventListener("mouseenter", e => {
+		if (!navbar_container.classList.contains("navbar-active")) {
+			e.target.firstElementChild.classList.add("navbar-hover");
+		}
+	})
+	navbar_container.addEventListener("mouseleave", e => {
+		if (!navbar_container.classList.contains("navbar-active")) {
+			e.target.firstElementChild.classList.remove("navbar-hover");
+		}
+	})
 })
