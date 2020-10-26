@@ -20,7 +20,7 @@ body {
 	text-align: center;
 }
 
-h1, span {
+h1, span, p {
 	font-family: 'Raleway', sans-serif;
 	color: white;
 }
@@ -30,15 +30,33 @@ h1, span {
 	width: 8em;
 }
 
+#content-2 {
+	margin: 0;
+	padding: 0;
+	left: 50%;
+}
+
 #controller span {
 	font-size: 20px;
 }
 
-.icon {
+.food-icon {
 	vertical-align: middle;
 	width: 35px;
 	height: 35px;
 	margin: 0;
+}
+
+.navbar-icon {
+	width: 20px;
+	height: 20px;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.navbar-container {
+	float: left;
+	padding: 10px;
 }
 
 .choice {
@@ -54,4 +72,12 @@ h1, span {
 
 .active-choice {
 	background: rgba(255, 208, 123, 0.8);
+}
+
+.hidden {
+	display: none;
+}
+
+p a {
+	color: rgba(255, 208, 123, 0.8);
 }

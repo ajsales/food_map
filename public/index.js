@@ -119,7 +119,7 @@ for (let i = 0; i < choiceList.length; i++) {
 	const choiceEl = choiceList[i];
 	choiceEl.addEventListener("click", () => {
 		choiceEl.classList.toggle("active-choice");
-		const classList = Array.from(choiceEl.classList);
+		let classList = Array.from(choiceEl.classList);
 		if (classList.includes("active-choice")) {
 			const markers = addMarkerFromQuery(places[i].query, places[i].icon);
 			curr_markers[i] = markers;
@@ -131,3 +131,29 @@ for (let i = 0; i < choiceList.length; i++) {
 		}
 	})
 }
+
+const navbar_map = document.getElementById("navbar-map");
+const navbar_credits = document.getElementById("navbar-credits");
+const content_1 = document.getElementById("content-1");
+const content_2 = document.getElementById("content-2");
+let classList;
+
+navbar_map.addEventListener("click", () => {
+	classList = Array.from(content_1.classList);
+	if (classList.includes("hidden")) {
+		document.querySelector("#navbar-map .navbar-icon").classList.toggle("active-choice");
+		document.querySelector("#navbar-credits .navbar-icon").classList.toggle("active-choice");
+		content_1.classList.toggle("hidden");
+		content_2.classList.toggle("hidden");
+	}
+})
+
+navbar_credits.addEventListener("click", () => {
+	classList = Array.from(content_2.classList);
+	if (classList.includes("hidden")) {
+		document.querySelector("#navbar-map .navbar-icon").classList.toggle("active-choice");
+		document.querySelector("#navbar-credits .navbar-icon").classList.toggle("active-choice");
+		content_1.classList.toggle("hidden");
+		content_2.classList.toggle("hidden");
+	}
+})
