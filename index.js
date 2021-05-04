@@ -95,19 +95,19 @@ function addMarkerFromQuery(query, icon) {
 const places = [
 	{
 		query: "Brazilian steakhouse",
-	 	icon: "/images/kebab.png"
+	 	icon: "public/images/kebab.png"
 	},
 	{
 		query: "Korean bbq",
-	 	icon: "/images/bacon.png"
+	 	icon: "public/images/bacon.png"
 	},
 	{
 		query: "boba", 
-	 	icon: "/images/boba.png"
+	 	icon: "public/images/boba.png"
 	},
 	{
 		query: "buffet", 
-	 	icon: "/images/buffet.png"
+	 	icon: "public/images/buffet.png"
 	}
 ]
 
